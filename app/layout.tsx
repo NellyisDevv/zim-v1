@@ -35,7 +35,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <ClerkProvider>
+    // changed where signOutUrl will take you after user signs out
+    <ClerkProvider afterSignOutUrl='/'>
       <html lang='en'>
         <body
           className={`${zfont.className} ${geistMono.variable} antialiased`}

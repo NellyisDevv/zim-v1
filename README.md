@@ -1,5 +1,12 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Icon Library
+
+<a href="https://www.flaticon.com/free-icons/home" title="home icons">Home icons created by Vectors Market - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/medal" title="medal icons">Medal icons created by Vectors Market - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/geography" title="geography icons">Geography icons created by Vectors Market - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/coin" title="coin icons">Coin icons created by Vectors Market - Flaticon</a>
+
 ## Getting Started
 
 First, run the development server:
