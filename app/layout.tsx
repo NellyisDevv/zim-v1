@@ -2,11 +2,16 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import { Poppins } from 'next/font/google'
 import { Roboto } from 'next/font/google'
+import { Nunito } from 'next/font/google'
 import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
 
 const font = Poppins({ weight: '400', subsets: ['latin'] })
 const sfont = Roboto({ weight: '400', subsets: ['latin'] })
+const zfont = Nunito({
+  weight: ['200', '300', '400', '500', '600', '700', '800'],
+  subsets: ['latin'],
+})
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -33,7 +38,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang='en'>
         <body
-          className={`${sfont.className} ${geistMono.variable} antialiased`}
+          className={`${zfont.className} ${geistMono.variable} antialiased`}
         >
           {children}
         </body>
