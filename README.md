@@ -6,6 +6,9 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 <a href="https://www.flaticon.com/free-icons/medal" title="medal icons">Medal icons created by Vectors Market - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/geography" title="geography icons">Geography icons created by Vectors Market - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/coin" title="coin icons">Coin icons created by Vectors Market - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/target" title="target icons">Target icons created by Vectors Market - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/heart" title="heart icons">Heart icons created by Vectors Market - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/thunder" title="thunder icons">Thunder icons created by Freepik - Flaticon</a>
 
 ## Getting Started
 
