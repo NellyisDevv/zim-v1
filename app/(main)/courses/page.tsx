@@ -3,11 +3,6 @@ import { getCourses, getUserProgress } from '@/db/queries'
 import { List } from './list'
 
 const CoursesPage = async () => {
-  // const courses = await getCourses()
-  // const userProgress = await getUserProgress()
-  // console.log(userProgress)
-  // console.log(courses)
-
   const coursesData = getCourses()
   const userProgressData = getUserProgress()
 
@@ -16,7 +11,7 @@ const CoursesPage = async () => {
     userProgressData,
   ])
 
-  console.log(userProgress)
+  console.log('User Progress Data:', userProgress)
 
   return (
     <div className='h-full max-w-[912px] px-3 mx-auto'>

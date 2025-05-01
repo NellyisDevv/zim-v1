@@ -5,6 +5,7 @@ import { Roboto } from 'next/font/google'
 import { Nunito } from 'next/font/google'
 import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
+import { Toaster } from '@/components/ui/sonner'
 
 const font = Poppins({ weight: '400', subsets: ['latin'] })
 const sfont = Roboto({ weight: '400', subsets: ['latin'] })
@@ -41,6 +42,7 @@ export default function RootLayout({
         <body
           className={`${zfont.className} ${geistMono.variable} antialiased`}
         >
+          <Toaster />
           {children}
         </body>
       </html>

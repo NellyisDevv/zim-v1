@@ -4,9 +4,11 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { InfinityIcon } from 'lucide-react'
 
+import { courses } from '@/db/schema'
+
 type Props = {
   // check destructured items to be string for error avoidance
-  activeCourse: { imageSrc: string; title: string } // replace with DB types
+  activeCourse: typeof courses.$inferSelect
   hearts: number
   points: number
   hasActiveSubscription: boolean

@@ -7,9 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "db:studio2": "bunx drizzle-kit studio",
     "db:studio": "npx drizzle-kit studio",
     "db:push": "drizzle-kit push",
-    "db:push2": "npx drizzle-kit push:pg"
+    "db:push2": "npx drizzle-kit push:pg",
+    "db:seed": "tsx ./scripts/seed.ts",
+    "db:seed2": "bun ./scripts/seed.ts"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.11.0",
@@ -26,9 +29,11 @@
     "embla-carousel-react": "^8.5.1",
     "lucide-react": "^0.468.0",
     "next": "15.0.4",
+    "next-themes": "^0.4.6",
     "pg-connection-string": "^2.8.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "sonner": "^2.0.3",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7"
   },
@@ -42,6 +47,7 @@
     "pg": "^8.15.6",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
+    "tsx": "^4.19.4",
     "typescript": "^5"
   }
 }
