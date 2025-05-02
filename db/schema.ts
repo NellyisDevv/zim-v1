@@ -36,7 +36,7 @@ export const unitsRelations = relations(units, ({ many, one }) => ({
     fields: [units.courseId],
     references: [courses.id],
   }),
-  lesson: many(lessons),
+  lessons: many(lessons),
 }))
 
 export const lessons = pgTable('lessons', {
@@ -58,7 +58,7 @@ export const lessonsRelations = relations(lessons, ({ one, many }) => ({
 
 export const challengesEnum = pgEnum('type', ['SELECT', 'ASSIST'])
 
-export const challenges = pgTable('lessons', {
+export const challenges = pgTable('challenges', {
   id: serial('id').primaryKey(),
   lessonId: integer('lesson_id')
     .references(() => lessons.id, { onDelete: 'cascade' })
@@ -77,7 +77,7 @@ export const challengesRelations = relations(challenges, ({ one, many }) => ({
   challengeProgress: many(challengeProgress),
 }))
 
-export const challengeOptions = pgTable('challengeOptions', {
+export const challengeOptions = pgTable('challenge_options', {
   id: serial('id').primaryKey(),
   challengeId: integer('challenge_id')
     .references(() => challenges.id, { onDelete: 'cascade' })
@@ -98,7 +98,7 @@ export const challengeOptionsRelations = relations(
   })
 )
 
-export const challengeProgress = pgTable('challengeProgress', {
+export const challengeProgress = pgTable('challenge_progress', {
   id: serial('id').primaryKey(),
   userId: text('user_id').notNull(), // TODO: confirm this doesn't break
   challengeId: integer('challenge_id')
