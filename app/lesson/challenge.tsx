@@ -1,6 +1,8 @@
 import { cn } from '@/lib/utils'
 import { challengeOptions, challenges } from '@/db/schema'
 
+import { Card } from './card'
+
 type Props = {
   options: (typeof challengeOptions.$inferSelect)[]
   onSelect: (id: number) => void
@@ -28,7 +30,20 @@ export const Challenge = ({
       )}
     >
       {options.map((option, i) => (
-        <div>{JSON.stringify(option)}</div>
+        <Card
+          key={option.id}
+          id={option.id}
+          text={option.text}
+          imageSrc={option.imageSrc}
+          shortcut={`${i + 1}`}
+          // TODO: Remove hardcoded true
+          selected={selectedOption === option.id}
+          onClick={() => onSelect(option.id)}
+          status={status}
+          audioSrc={option.audioSrc}
+          disabled={disabled}
+          type={type}
+        />
       ))}
     </div>
   )
