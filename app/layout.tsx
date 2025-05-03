@@ -3,9 +3,10 @@ import localFont from 'next/font/local'
 import { Poppins } from 'next/font/google'
 import { Roboto } from 'next/font/google'
 import { Nunito } from 'next/font/google'
-import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
 import { Toaster } from '@/components/ui/sonner'
+import { ExitModal } from '@/components/modals/exit-modal'
+import './globals.css'
 
 const font = Poppins({ weight: '400', subsets: ['latin'] })
 const sfont = Roboto({ weight: '400', subsets: ['latin'] })
@@ -43,6 +44,7 @@ export default function RootLayout({
           className={`${zfont.className} ${geistMono.variable} antialiased`}
         >
           <Toaster />
+          <ExitModal />
           {children}
         </body>
       </html>
