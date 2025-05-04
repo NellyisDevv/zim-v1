@@ -19,11 +19,12 @@ const main = async () => {
     await db.delete(schema.challenges)
     await db.delete(schema.challengeOptions)
     await db.delete(schema.challengeProgress)
+    await db.delete(schema.userSubscription)
 
     await db.insert(schema.courses).values([
-      { id: 1, title: 'Spanish', imageSrc: '/co.svg' },
-      { id: 2, title: 'English', imageSrc: '/us.svg' },
-      { id: 3, title: 'French', imageSrc: '/fr.svg' },
+      { id: 1, title: 'US Government', imageSrc: '/us.svg' },
+      // { id: 2, title: 'English', imageSrc: '/us.svg' },
+      // { id: 3, title: 'French', imageSrc: '/fr.svg' },
     ])
 
     await db.insert(schema.units).values([
@@ -31,7 +32,7 @@ const main = async () => {
         id: 1,
         courseId: 1, // Spanish
         title: 'Unit 1',
-        description: 'Learn the basics of Spanish',
+        description: 'Learn the basics of the US Government',
         order: 1,
       },
     ])
@@ -75,37 +76,116 @@ const main = async () => {
         lessonId: 1, // Nouns
         type: 'SELECT',
         order: 1,
-        question: 'Which one of these is "the man"',
+        question: 'Who was the first US President?',
+      },
+      {
+        id: 2,
+        lessonId: 1, // Nouns
+        type: 'ASSIST',
+        order: 2,
+        question: 'Where is the White House Located?',
+      },
+      {
+        id: 3,
+        lessonId: 1, // Nouns
+        type: 'SELECT',
+        order: 3,
+        question: 'How long is a presidential term?',
       },
     ])
 
     await db.insert(schema.challengeOptions).values([
       {
-        id: 1,
         challengeId: 1, // Which one of these is "the man"?
-        imageSrc: '/man.png',
+        // imageSrc: '/man.png',
         correct: true,
-        text: 'el hombre',
-        audioSrc: '/es_man.mp3',
+        text: 'George Washington',
+        // audioSrc: '/es_man.mp3',
       },
       {
-        id: 2,
         challengeId: 1,
-        imageSrc: '/woman.png',
+        // imageSrc: '/woman.png',
         correct: false,
-        text: 'la mujer',
-        audioSrc: '/es_woman.mp3',
+        text: 'Abraham Lincoln',
+        // audioSrc: '/es_woman.mp3',
       },
       {
-        id: 3,
         challengeId: 1,
-        imageSrc: '/robot.png',
+        // imageSrc: '/robot.png',
         correct: false,
-        text: 'el robot',
-        audioSrc: '/es_robot.mp3',
+        text: 'Emmanuel Macron',
+        // audioSrc: '/es_robot.mp3',
       },
     ])
 
+    await db.insert(schema.challengeOptions).values([
+      {
+        challengeId: 2, // "the man"?
+        correct: true,
+        text: 'Washington D.C.',
+        // audioSrc: '/es_man.mp3',
+      },
+      {
+        challengeId: 2,
+        correct: false,
+        text: 'Washington State',
+        // audioSrc: '/es_woman.mp3',
+      },
+      {
+        challengeId: 2,
+        correct: false,
+        text: 'Tallahassee',
+        // audioSrc: '/es_robot.mp3',
+      },
+    ])
+
+    await db.insert(schema.challengeOptions).values([
+      {
+        challengeId: 3, // Which one of these is the "the robot"?
+        // imageSrc: '/man.png',
+        correct: false,
+        text: '2 years',
+        // audioSrc: '/es_man.mp3',
+      },
+      {
+        challengeId: 3,
+        // imageSrc: '/woman.png',
+        correct: false,
+        text: '3 years',
+        // audioSrc: '/es_woman.mp3',
+      },
+      {
+        challengeId: 3,
+        // imageSrc: '/robot.png',
+        correct: true,
+        text: '4 years',
+        // audioSrc: '/es_robot.mp3',
+      },
+    ])
+
+    await db.insert(schema.challenges).values([
+      {
+        id: 4,
+        lessonId: 2, // Verbs
+        type: 'SELECT',
+        order: 1,
+        question: 'More quizes coming soon!',
+      },
+      {
+        id: 5,
+        lessonId: 2, // Verbs
+        type: 'ASSIST',
+        order: 2,
+        question: 'the man',
+      },
+      {
+        id: 6,
+        lessonId: 2, // Verbs
+        type: 'SELECT',
+        order: 3,
+        question: 'Which one of these is the "the robot"?',
+      },
+    ])
     console.log('Seeding finished')
   } catch (error) {
     console.error(error)

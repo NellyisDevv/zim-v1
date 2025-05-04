@@ -12,7 +12,7 @@ const MarketingLayout = ({ children }: Props) => {
       <main className='flex-1 flex flex-col items-center justify-center'>
         {children}
       </main>
-      <Footer />
+      {/*<Footer /> */}
     </div>
   )
 }
